@@ -8,7 +8,7 @@ resource "kubernetes_deployment" "app" {
       metadata { labels = { app = "devops-demo" } }
       spec {
         container {
-          image = "docker.io/<user>/devops-demo:latest"
+          image = "docker.io/aniket32/devops-demo:latest"
           name  = "app"
           port { container_port = 3000 }
         }

@@ -53,17 +53,6 @@ pipeline {
         '''
       }
     }
-    stage('Terraform Import') {
-      when { expression { fileExists('terraform/main.tf') } }
-      steps {
-        sh '''
-          cd terraform
-          terraform init
-          terraform import kubernetes_deployment.app default/devops-demo || true
-          terraform import kubernetes_service.svc default/devops-demo-svc || true
-        '''
-      }
-    }
 
     stage('Terraform Apply') {
       when { expression { fileExists('terraform/main.tf') } }

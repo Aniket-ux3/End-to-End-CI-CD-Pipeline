@@ -21,7 +21,11 @@ resource "kubernetes_service" "svc" {
   metadata { name = "devops-demo-svc" }
   spec {
     selector = { app = "devops-demo" }
-    port { port = 3000, target_port = 3000 }
+    port {
+      port        = 3000
+      target_port = 3000
+    }
+
     type = "NodePort"
   }
 }

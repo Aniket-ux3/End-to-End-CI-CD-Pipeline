@@ -1,3 +1,4 @@
+
 resource "kubernetes_deployment" "app" {
   metadata { name = "devops-demo" }
   spec {
@@ -7,7 +8,7 @@ resource "kubernetes_deployment" "app" {
       metadata { labels = { app = "devops-demo" } }
       spec {
         container {
-          image = "docker.io/rav3/devops-demo:latest"
+          image = "docker.io/<user>/devops-demo:latest"
           name  = "app"
           port { container_port = 3000 }
         }

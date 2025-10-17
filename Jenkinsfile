@@ -33,11 +33,41 @@ pipeline {
         sh "kubectl rollout status deployment/devops-demo || true"
       }
     }
+    stage('Terraform Import') {
+      when { expression { fileExists('terraform/main.tf') } }
+      steps {
+        sh '''
+           cd terraform
+           terraform init
+           if ! terraform state show kubernetes_deployment.app >/dev/null 2>&1; then
+             terraform import kubernetes_deployment.app default/devops-demo
+           else
+             echo "Deployment already imported. Skipping..."
+           fi
+ 
+           if ! terraform state show kubernetes_service.svc >/dev/null 2>&1; then
+             terraform import kubernetes_service.svc default/devops-demo-svc
+           else
+             echo "Service already imported. Skipping..."
+           fi
+        '''
+      }
+    }
+    stage('Terraform Import') {
+      when { expression { fileExists('terraform/main.tf') } }
+      steps {
+        sh '''
+          cd terraform
+          terraform init
+          terraform import kubernetes_deployment.app default/devops-demo || true
+          terraform import kubernetes_service.svc default/devops-demo-svc || true
+        '''
+      }
+    }
 
     stage('Terraform Apply') {
       when { expression { fileExists('terraform/main.tf') } }
       steps {
-        sh "cd terraform && terraform init"
         sh "cd terraform && terraform apply -auto-approve"
       }
     }

@@ -11,25 +11,25 @@ A fully automated, production-grade CI/CD pipeline built using **Jenkins, Docker
 
 ---
 
-### ▶️ Live Demo
+###  Live Demo
 
 This animation shows the entire automated workflow: a code change is pushed to GitHub, which automatically triggers the Jenkins pipeline to build, test, and deploy the new version to the Kubernetes cluster.
 
-* **(Recommended) Replace this text with a GIF of your pipeline running!** You can use tools like Giphy Capture or Kap. A GIF is the best way to prove your project works.
+![til](https://github.com/Aniket-ux3/End-to-End-CI-CD-Pipeline/blob/master/workflow/Untitled%20video%20-%20Made%20with%20Clipchamp%20(1)%20(1).gif)
     
 
 ---
-## 📖 Table of Contents
+##  Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Architecture Diagram](#-architecture-diagram)
-- [Tech Stack](#-tech-stack)
-- [Workflow Explained](#-workflow-explained)
-- [Key Learning Outcomes](#-key-learning-outcomes)
+- [Project Overview](#project-overview)
+- [Architecture Diagram](#architecture-diagram)
+- [Tech Stack](#tech-stack)
+- [Workflow Explained](#workflow-explained)
+- [Key Learning Outcomes](#key-learning-outcomes)
 
 ---
 
-## 🎯 Project Overview
+##  Project Overview
 
 This project demonstrates a complete DevOps pipeline built using open-source tools and a free-tier setup. It mirrors the design used in modern enterprise environments but is implemented entirely on a local machine for accessibility and zero cost.
 
@@ -37,7 +37,7 @@ The core of the project is a **Jenkins server**, running in Docker, that listens
 
 ---
 
-## 🏗️ Architecture Diagram
+##  Architecture Diagram
 
 The diagram below illustrates the flow of data and automation from the developer's commit to the final deployment.
 
@@ -61,7 +61,7 @@ graph TD
 ```
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category                   | Tool / Service    | Purpose                                                   |
 | -------------------------- | ----------------- | --------------------------------------------------------- |
@@ -76,7 +76,7 @@ graph TD
 
 ---
 
-## 🔄 Workflow Explained
+##  Workflow Explained
 
 1.  **Code Commit (GitHub):** A developer pushes new code or changes to the `main` branch of the repository.
 
@@ -92,7 +92,7 @@ graph TD
 
 ---
 
-## 🧠 Key Learning Outcomes
+##  Key Learning Outcomes
 
 Through this project, I gained hands-on expertise in:
 
